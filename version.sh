@@ -13,8 +13,7 @@ echo "Enter Version Number (#.#.#)"
 read VERSION
 echo "Enter Build Number (#)"
 read BUILD
-FULL="_$BUILD"
-FULL="$VERSION$FULL"
+FULL="${VERSION}_${BUILD}"
 
 echo ""
 echo "Generating Version $FULL"
@@ -38,4 +37,5 @@ git add $GRADLE
 git add $STRINGS
 git commit -m "Update Version Number"
 git tag -a "$FULL" -m ""
+echo "Git Done"
 
